@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Integration Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://p.kindpng.com/picc/s/77-774666_product-testing-service-test-icon-hd-png-download.png"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/iconic/css/material-design-iconic-font.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/css-hamburgers/hamburgers.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/animsition/css/animsition.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/daterangepicker/daterangepicker.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/noui/nouislider.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <div class="container-contact100">
+      <span class="contact100-form-title"> Integration Testing </span>
+      <div class="container-contact100-form-btn">
+        <button onClick="handleConnect()" class="contact100-form-btn">
+          <span>
+            Connect
+            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+      <div class="container-contact100-form-btn">
+        <button onClick="handleDisconnect()" class="contact100-form-btn">
+          <span>
+            Disconnect
+            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+      <div class="container-contact100-form-btn">
+        <button onClick="handleTest()" class="contact100-form-btn">
+          <span>
+            Test
+            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+      <div class="container-contact100-form-btn">
+        <button onClick="handleSync()" class="contact100-form-btn">
+          <span>
+            Sync
+            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+
+      <div class="wrap-contact100" style="margin: 1rem 0rem">
+        <div class="wrap-input100 validate-input bg1" data-validate="">
+          <span class="label-input100"> Response </span>
+          <div
+            class="input100"
+            id="responseText"
+            style="word-wrap: break-word"
+          ></div>
+        </div>
+      </div>
+
+      <div class="wrap-contact100">
+        <form
+          class="contact100-form validate-form"
+          id="connect_form"
+          method="post"
+          target="popupWindow"
+        >
+          <div
+            class="wrap-input100 validate-input bg1 rs1-wrap-input100"
+            data-validate=""
+          >
+            <span class="label-input100">Integration Path</span>
+            <span
+              class="input100"
+              type="text"
+              id="pathName"
+              placeholder="Integration Path"
+            ></span>
+          </div>
+
+          <div
+            class="wrap-input100 validate-input bg1 rs1-wrap-input100"
+            data-validate=""
+          >
+            <span class="label-input100">Integration ID</span>
+            <input
+              class="input100"
+              type="text"
+              name="integrationId"
+              placeholder="Integration ID"
+              readonly
+            />
+          </div>
+
+          <div class="wrap-input100 bg1 rs1-wrap-input100">
+            <span class="label-input100">Org ID</span>
+            <input
+              class="input100"
+              type="text"
+              name="orgId"
+              placeholder="Org ID"
+              readonly
+            />
+          </div>
+
+          <div
+            class="wrap-input100 validate-input bg1 rs1-wrap-input100"
+            data-validate=""
+          >
+            <span class="label-input100">Sync Type</span>
+            <input
+              class="input100"
+              type="text"
+              name="syncType"
+              placeholder="Sync Type"
+              readonly
+            />
+          </div>
+
+          <div class="wrap-input100 validate-input bg1" data-validate="">
+            <span class="label-input100">Form Fields</span>
+            <textarea
+              class="input100"
+              type="text"
+              name="formFields"
+              placeholder="Form Fields"
+              readonly
+            ></textarea>
+          </div>
+
+          <div class="wrap-input100 bg1 rs1-wrap-input100">
+            <span class="label-input100">User ID</span>
+            <input
+              class="input100"
+              type="text"
+              name="userId"
+              placeholder="User ID"
+              readonly
+            />
+          </div>
+
+          <div
+            class="wrap-input100 validate-input bg1 rs1-wrap-input100"
+            data-validate=""
+          >
+            <span class="label-input100">Base URL </span>
+            <span
+              class="input100"
+              type="text"
+              id="baseUrl"
+              placeholder="Integration Path"
+            ></span>
+          </div>
+
+          <div
+            class="wrap-input100 validate-input bg1 rs1-wrap-input100"
+            data-validate=""
+          >
+            <span class="label-input100">Skip Sync</span>
+            <input
+              class="input100"
+              type="text"
+              name="skipSync"
+              placeholder="Skip Sync"
+              readonly
+            />
+          </div>
+
+          <div class="wrap-input100 bg1 rs1-wrap-input100">
+            <span class="label-input100">New Scopes</span>
+            <input
+              class="input100"
+              type="text"
+              name="newScopes"
+              placeholder="New Scopes"
+              readonly
+            />
+          </div>
+
+          <div class="wrap-input100 bg1 rs1-wrap-input100">
+            <span class="label-input100">Invite Code</span>
+            <input
+              class="input100"
+              type="text"
+              name="inviteCode"
+              placeholder="Invite Code"
+              readonly
+            />
+          </div>
+
+          <div
+            class="wrap-input100 validate-input bg1 rs1-wrap-input100"
+            data-validate=""
+          >
+            <span class="label-input100">Authorization</span>
+            <input
+              class="input100"
+              type="password"
+              name="Authorization"
+              placeholder="Authorization"
+              readonly
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="js/jwt.js"></script>
+  <script>
+    // Enter your values here
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+    // https://integrations-dev.zluri.com/connect_start/alicloud
+    
+    // const path = "googletagmanager";
+    //  const path = "googleplaystoreconsole"
+    // const path = "perimeter81";
+    // const path = "actitime" ;
+    // const path = "ghost";
+    // const path = "teamretro";
+    // const path = "zenduty";
+    // const path = "adobesign";
+     const path = "pivotaltracker";
+
+        const integration_id = "6336ca16e67c5e046f851f1e" // pivotaltracker
+      // const integration_id = "633557e7f8d7ae0050362f1f" // adobesign
+      //  const integration_id = "62b5970eefb4aa00111c53ef" // googleplaystoreconsole
+     // const integration_id = "632d38e11e209a004f3c3058" // zenduty
+     // const integration_id = "632aa888f3d06800cf24952d" // teamretro
+     // const integration_id = "63297ab3338a550050c3165c" // ghost
+     // const integration_id = "6322cc8f087d700084dab757" // perimeter81
+    // const integration_id = "62590815fbba5c0012b55596"; // tagManager
+    // const integration_id = "624c2c3a6855b10012aa6c62"; // actitime
+
+
+    // Add FormFields here
+    const formFields = {};
+    formFields.apiToken = '1bfefc7127b94b8b5a4434dbbe2b1bbe';// pivotal tracker
+    //formFields.accessToken = '3AAABLblqZhDPgFJGA-_ui8PHmB6GAUP8rkV8RSVjj4JaIUlwYB5f4BYnXo-vwHbKXYnLvRs0Aj0HkliGWHJfcLtVw13btpXe' // adobesign
+    //formFields.developerId = '5675369808540847199'// googleplaystoreconsole
+    /* formFields.username = "kalimuthu.r@zluri.com"
+    formFields.password = "K@lir888"
+    formFields.domain = "zluri"
+    formFields.serialno = 5 *///for actitime 
+/* p81 *///formFields.apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzMTc1Nzk2YzYyZjA3NWE0OWY0NjgyZmZkMjcxMGQxNSIsImlkIjoiMW9qdk4xZWxFbSIsInNjb3BlcyI6WyJHUk9VUF9SRUFEIiwiVVNFUl9SRUFEIl0sInRlbmFudElkIjoic29yYmV0IiwiaWF0IjoxNjYyNjIzNjkwLCJleHAiOjE2OTQxNTk2OTAsImF1ZCI6InNhZmVyLWF1dGgiLCJpc3MiOiJhdXRoLnNhZmVyc29mdHdhcmUuY29tIiwic3ViIjoic29yYmV0In0.bRJQkGT_Ga__UEQBlVAKNnV1Lf5dwjAK7K6HdJg5WBw'
+    /* formFields.adminApiKey = '632961ca8d1bb1003d4c5fcd:04d4f6ff189ecf44a4d39aed8a617afe3e61600d58883948f33b54e1af1a04b2';
+    formFields.subDomain = 'zluri'; */// -> for ghost
+   // formFields.apiKey = "1Fw8k2sCj9EZwHbnFJxYLQ"; // -> for Teamretro
+   // formFields.apiKey = "0749b40a126eb8e18cff9762821ebd4fb8cde727"; // -> for Zenduty
+
+
+    const orgId = "5fd9f2af87a29c1c58cc951e";
+    const userId = "6041d9d08af5919d8a0b1b4e";
+    // use this variable to trigger partial sync
+    const partialSync = false; // true : partial sync , false :  Full sync
+
+    const skipSync = "";
+    // sending empty field skips sync when we are connecting
+
+    const newScopes = [];
+
+    /* "https://www.googleapis.com/auth/tagmanager.manage.users",
+    "https://www.googleapis.com/auth/tagmanager.manage.accounts" */
+
+    /* "https://www.googleapis.com/auth/androidpublisher" */
+
+
+    const invitCode = "";
+    // for the invite Flow
+
+    const baseUrl = "http://localhost:4000";
+    // can change to integrations-dev.zluri.com for triggering integrations on app-dev.zluri.com
+
+    const tokenData = `eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRRZzFKdVpCOHgzdEhKZlVVR3JwMiJ9.eyJpc3MiOiJodHRwczovL2F1dGguemx1cmkuZGV2LyIsInN1YiI6ImF1dGgwfDYxYmIzMTMyZmEyY2QxMDA2OWViNTMwNSIsImF1ZCI6WyJodHRwczovL2FwaS1kZXYuemx1cmkuY29tIiwiaHR0cHM6Ly9kZXYtemx1cmkudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY2NDc3NjI4NSwiZXhwIjoxNjY0ODYyNjg1LCJhenAiOiJjbHg0clVpZHc3WmdySFhmOTdwWVJtWjNiRzY0VzQ5UCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwgb2ZmbGluZV9hY2Nlc3MifQ.iF4T5Qj8myk42Bts3NJlCm_6rU2-jpqyBvuuOg-wFE-Cx3iYsy2gyXA_sH-RmBj-Nti1v-JieuW6mgCRZAUsMM7eS-u6oFVZN9NsQ7rhvYtm0mTrWPKBwyu-mpJqZE-fIaEx72s1qjXPNcMtVCIODxGobIweXAMdf_YG6w-nL6Cj3oD7_RTRGhXCqek1LhfHIDnpY1Fx2Wo1zDLdKAydxW01piSS2GsrKngZHduxbJrnmea__2oZdNkzRv_RcRRu5n3plqcFBGycjr-YwJbAP1t2ueMCvCiMcXnJAkoFzbkXzv_Jux29RdZqOpIZO1o9Yaeg0Beo_lH-K93KaeQ0IA`;
+    // Get this token from app-dev.zluri.com -> Dev Tools -> Application -> Local Storage
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+    const token = `Bearer ${tokenData}`;
+    const syncType = partialSync ? "partial" : "full";
+    const connectForm = document.getElementById("connect_form");
+    connectForm.orgId.value = orgId;
+    connectForm.integrationId.value = integration_id;
+    connectForm.Authorization.value = token;
+    connectForm.userId.value = userId;
+    connectForm.skipSync.value = skipSync;
+    connectForm.newScopes.value = newScopes;
+    connectForm.inviteCode.value = invitCode;
+    connectForm.syncType.value = syncType;
+    connectForm.formFields.value = JSON.stringify(formFields);
+    document.getElementById("pathName").innerText = path;
+    document.getElementById("baseUrl").innerText = baseUrl;
+
+    // Connect function
+    const handleConnect = () => {
+      connectForm.action = baseUrl + "/connect_start/" + path;
+      window.open("", "popupWindow");
+      connectForm.submit();
+    };
+
+    // Test Function
+    const handleTest = async () => {
+      const body = JSON.stringify({
+        orgId,
+        integrationId: integration_id,
+      });
+      const testUrl = baseUrl + "/v1/" + path + "/test";
+      const res = await fetch(testUrl, {
+        method: "POST",
+        body,
+        headers: {
+          "Content-Type": "application/json",
+          authorization: token,
+        },
+      });
+      const { success, error } = await res.json();
+      if (error) {
+        document.getElementById("responseText").innerText =
+          "Test Result: " + error;
+      } else {
+        document.getElementById("responseText").innerText =
+          "Test Result: success";
+      }
+    };
+
+    const handleSync = async () => {
+      const secret = "xmgmgM=VcMk{Yas";
+      const currentDate = new Date();
+
+      const code = JWT.sign(
+        {
+          integration_id: integration_id,
+          org_id: orgId,
+          type: syncType,
+        },
+        secret,
+        {
+          expiresIn: 1400,
+        }
+      );
+      const syncUrl = baseUrl + "/v1/" + path + "/sync?code=" + code;
+      const res = await fetch(syncUrl);
+      const response = await res.json();
+      const { message, syncId, error } = response;
+      const AWSpath = `${orgId}/${integration_id}/${currentDate.getFullYear()}/${
+        currentDate.getMonth() + 1
+      }/${currentDate.getDate()}/${syncId}`;
+      if (error) {
+        document.getElementById("responseText").innerText =
+          "Sync Result: " + error;
+      } else {
+        document.getElementById("responseText").innerText =
+          "Sync Result: Success " +
+          JSON.stringify({ response, path: AWSpath }, null, 2);
+      }
+    };
+
+    // disconnect function
+    const handleDisconnect = () => {
+      connectForm.action = baseUrl + "/v1/" + path + "/disconnect";
+      window.open("", "popupWindow");
+      connectForm.submit();
+    };
+  </script>
+</html>
